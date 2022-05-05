@@ -81,11 +81,11 @@ Take care of all your gift-giving for the year by simply adding the important da
 
 ### **BUILDING PLAN**
 
-##### **CHECK OUT MORE ON [TRELLO]()**
+##### **CHECK OUT MORE ON [TRELLO](https://trello.com/invite/b/artS1Pwv/ec83e0315e1ba426c39c293781f720de/giverly)**
 
-##### **LINK TO THE [ERD]()**
+##### **LINK TO THE [ERD](https://drive.google.com/file/d/1-cOzkpCzTNDkAvlA43sFyUmChHMm8VFw/view?usp=sharing)**
 
-##### **LINK TO THE [CHD]()**
+##### **LINK TO THE [CHD](https://drive.google.com/file/d/1S2vc1W-37NNE69ydtKRENHX5VDEr8bEM/view?usp=sharing)**
 
 &nbsp;
 
