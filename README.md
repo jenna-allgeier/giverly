@@ -15,7 +15,7 @@
 ## ***DESCRIPTION***
 ### Never forget a birthday/graduation/anniversary again!
 &nbsp;
-Take care of all your gift-giving for the year by simply adding the important dates to a calendar and picking out a gift from Amazon. Once your dates and gifts are set-up, you're done! Giverly will automatically add the item to your Amazon cart two weeks before the special date and send you an alert. Just go into your cart, press order and voila! Giverly takes stress out of gifting.
+Take care of all your gift-giving for the year by simply adding the important dates to a calendar and picking out a gift from Amazon. Once your dates and gifts are set-up, you're done! Giverly will automatically add the item to your Amazon cart two weeks before the special date and send you an alert. Just go into your cart, press order and voila! Giverly takes the stress out of gifting.
 
 ### MVP:
 
