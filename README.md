@@ -27,7 +27,6 @@ Take care of all your gift-giving for the year by simply adding the important da
   * First Name
   * Last Name
   * Username
-  * About
   * Email
   * Password
 * Calendar
