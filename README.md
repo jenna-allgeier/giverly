@@ -14,7 +14,7 @@
 &nbsp;
 ## ***DESCRIPTION***
 ### Never forget a birthday/graduation/anniversary again!
-&nbsp;
+
 Take care of all your gift-giving for the year by simply adding the important dates to a calendar and picking out a gift from one of our supported stores. Once your dates and gifts are set-up, you're done! Giverly will automatically add the item to your cart two weeks before the special date and send you an alert. Just go into your cart, press order and voila! Giverly takes the stress out of gifting (currently only available for orders in the United States).
 
 ### MVP:
