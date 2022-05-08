@@ -1,0 +1,11 @@
+<h2>{{ user.firstName }} {{ user.lastName }} <a href="">(edit)</a></h2>
+
+<h3>Upcoming Events <a href="">(+)</a></h3>
+<ul>
+  {% for event in user.events.all %}
+  <li>
+    <a href="">{{ event.title }}-{{ event.description }}</a>
+    <img src="{{ event.image }}" alt="" class="event-image" />
+  </li>
+  {% endfor %}
+</ul>
