@@ -58,9 +58,8 @@ Take care of all your gift-giving for the year by simply adding the important da
 * HTML
 * CSS
 * JavaScript
-* TypeScript
-* React.js
-* Redux
+  * React.js
+  * Redux
 * Django
 * Python
 * Heroku
