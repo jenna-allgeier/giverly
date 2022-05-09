@@ -1,7 +1,7 @@
 # GIVERLY
 
 &nbsp;
-![Giverly](https://www.canva.com/design/DAE_1LJaBnw/aBoVGTcjbbWrqmyAsDoJ1Q/edit?utm_content=DAE_1LJaBnw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton?width=500.png)
+![Giverly](./assets/giverly.png)
 &nbsp;
 
 ***
