@@ -75,8 +75,7 @@ Take care of all your gift-giving for the year by simply adding the important da
 
 &nbsp;
 ### ***Future Updates***
-* Include more Amazon supported countries
-* Automate cart ordering?
+* Automate cart ordering
 
 &nbsp;
 
