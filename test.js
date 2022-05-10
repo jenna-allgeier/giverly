@@ -19,6 +19,7 @@ let factorial = (num) => {
 let fizzBuzz = (num) => {
     //iterate from 1 to num
     for(let i = 1; i <= num; i++) {
+        console.log('iteration:', i)
         if(i % 3 === 0 && i % 5 === 0) {
             console.log('fizzbuzz')
         }
