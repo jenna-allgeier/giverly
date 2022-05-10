@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import User, Event, Order, OrderItem
+from .models import Event, Order, OrderItem
+from django.contrib.auth.models import User
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     events = serializers.HyperlinkedRelatedField(
@@ -13,12 +14,12 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     )
 
     def create(self, validated_data):
-        user = User.objects.create_user(validated_data['username'], validated_data["password"],)
+        user = User.objects.create_user(**validated_data)
         return user
 
     class Meta:
         model = User
-        fields = ('id', 'user_url', 'firstName', 'lastName', 'email', 'userName', 'password', 'events',)
+        fields = ('username', 'password', 'id', 'email', 'first_name', 'last_name', 'user_url', 'events',)
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     user = serializers.HyperlinkedRelatedField(
