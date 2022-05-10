@@ -1,5 +1,3 @@
-# GIVERLY
-
 &nbsp;
 ![Giverly](./assets/giverly.png)
 &nbsp;
