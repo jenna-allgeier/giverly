@@ -1,12 +1,12 @@
-import { ADD_USER } from "../types"
+import { CURRENT_USER } from "../types"
 import { NEW_USER } from "../types"
 
 export const AddUser = (user) => ({
-    type: ADD_USER,
+    type: CURRENT_USER,
     payload: user
 })
 
-export const NewUser = (user) => ({
+export const RegisterUser = (newUser) => ({
     type: NEW_USER,
-    payload: user
+    payload: newUser
 })

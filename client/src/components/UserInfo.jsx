@@ -1,11 +1,12 @@
 import { connect } from "react-redux"
 
+
 const UserInfo = (props) => {
-    console.log(props)
 
     return (
         <div>
-            <h1>{props.userState.user.username}</h1>
+            <h2>{props.userState.user.username}</h2>
+            
         </div>
     )
 }
