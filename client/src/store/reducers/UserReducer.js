@@ -1,20 +1,28 @@
-import { CURRENT_USER, NEW_USER } from "../types"
+import { CURRENT_USER, CREATE_USERNAME, CREATE_USERPASSWORD, REGISTER_USERNAME, REGISTER_USERPASSWORD } from "../types"
 
 const initialState = {
     user: {
-        username: 'Jeff - logged in'
+        username: 'Jeff - logged in',
+        password: '12345'
     },
-    newUser: {
-        username: 'Jenna - registered'
-    }
+    createUsername: '',
+    createUserPassword: '',
+    registerUsername: '',
+    registerUserPassword: '',
 }
 
 const UserReducer = (state = initialState, action) => {
     switch (action.type) {
         case CURRENT_USER:
             return { ...state, user: [...state.user, action.payload] }
-        case NEW_USER:
-            return { ...state, newUser: action.payload }
+        case CREATE_USERNAME:
+            return { ...state, createUsername: action.payload }
+        case CREATE_USERPASSWORD:
+            return { ...state, createUserPassword: action.payload }
+        case REGISTER_USERNAME:
+            return { ...state, registerUsername: state.createUsername, createUsername: '' }
+        case REGISTER_USERPASSWORD:
+            return { ...state, registerUserPassword: state.createUserPassword, createUserPassword: '' }
         default:
             return { ...state }
     }
