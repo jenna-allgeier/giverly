@@ -1,18 +1,47 @@
-import logo from './logo.png';
 import './styles/App.css';
-import UserInfo from './components/UserInfo';
-import Register from './components/Register';
-import Login from './components/Login';
+import { Routes, Route } from 'react-router-dom'
+import Welcome from './pages/Welcome';
+import Navbar from './components/Navbar';
+// import UserProfile from './pages/UserProfile';
+import LoginRegister from './pages/LoginRegister';
+import Calendar from './pages/Calendar';
+import Cart from './pages/Cart'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <UserInfo />
-        <Register />
-        <Login />
-      </header>
+      
+        <Navbar />
+      <main>
+        <div>
+          <Routes>
+            <Route index 
+              element={
+                <Welcome />
+                } 
+            />
+            <Route path={'login-register'} 
+              element={
+                <LoginRegister />
+                } 
+            />
+            {/* <Route path={`user-profile/${userId}`}
+              element={
+                <UserProfile />} 
+                /> */}
+            <Route path={'calendar'}
+              element={
+                <Calendar />
+                }
+            />
+            <Route path={'cart'}
+              element={
+                <Cart />
+              }    
+            />
+          </Routes>
+        </div>
+      </main>
     </div>
   );
 }
