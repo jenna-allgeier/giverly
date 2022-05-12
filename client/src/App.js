@@ -4,9 +4,7 @@ import Welcome from './pages/Welcome';
 import Navbar from './components/Navbar';
 // import UserProfile from './pages/UserProfile';
 import LoginRegister from './pages/LoginRegister';
-import Login from './components/Login';
-import Register from './components/Register';
-import Calendar from './pages/Calendar';
+import AppCalendar from './pages/Calendar';
 import Cart from './pages/Cart'
 
 function App() {
@@ -15,7 +13,7 @@ function App() {
       
         <Navbar />
       <main>
-        <div>
+        <div className='page-style'>
           <Routes>
             <Route index 
               element={
@@ -33,7 +31,7 @@ function App() {
                 /> */}
             <Route path={'calendar'}
               element={
-                <Calendar />
+                <AppCalendar />
                 }
             />
             <Route path={'cart'}
