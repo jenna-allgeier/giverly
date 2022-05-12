@@ -37,6 +37,43 @@
   }
 }
 
+/* ------- general ---------- */
+
+h1, h2, h3, h4, p {
+  color:#282c34;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  margin: 10px;
+  margin-top: 20px;
+  padding: 8px;
+  border: 1px solid #282c34;
+  border-radius: 10px;
+  color: #282c34;
+  background-color: rgb(255, 241, 221);
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  box-shadow: 1px 1px #999;
+  transition-duration: 0.5s;
+  opacity: 1;
+}
+
+.button:hover {
+  background-color: #282c34;
+  color: rgb(255, 241, 221);
+}
+.button:active {
+  background-color: rgb(250, 250, 134);
+  color: grey;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+  opacity: 0.5;
+}
+
+/* ------- nav ---------- */
+
 .nav-header {
   display: flex;
   flex-direction: row-reverse;
@@ -49,7 +86,41 @@
   text-decoration: none;
   font-size: 23px;
   font-weight: bolder;
-  font-family: Arial, Helvetica, sans-serif;
   padding: 5px;
   margin-right: 25px;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ------- welcome ---------- */
+
+.welcome {
+  color: blanchedalmond;
+}
+
+/* ------- login/register ---------- */
+
+.login-register-container {
+  margin-top: 50px;
+}
+
+.login-register-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #282c34;
+}
+
+.input-field {
+  padding: 20px;
+  margin: 10px;
+  border-color: #282c34;
+}
+
+/* ------- calendar ---------- */
+
+
+
+
+/* ------- cart ---------- */

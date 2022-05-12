@@ -2,7 +2,6 @@ import { connect } from "react-redux"
 import { AddUsername, AddUserPassword } from "../store/actions/UserActions"
 
 const Login = (props) => {
-    console.log(props)
 
     const handleUsernameChange = (e) => {
         props.addUsername(e.target.value)
@@ -18,10 +17,12 @@ const Login = (props) => {
     }
 
     return (
-        <div>
-            <form action="">
+        <div className="login-register-container">
+            <h2>Login to Your Account</h2>
+            <form className='login-register-form'>
                 <input 
                     type="text"
+                    className="input-field"
                     name='username'
                     placeholder="username"
                     value={props.userState.addUsername}
@@ -29,12 +30,13 @@ const Login = (props) => {
                 />
                 <input 
                     type="text"
+                    className="input-field"
                     name='password'
                     placeholder="password"
                     value={props.userState.addUserPassword}
                     onChange={handlePasswordChange}
                 />
-                <button type="submit" onClick={handleSubmit}>
+                <button type="submit" className="button" onClick={handleSubmit}>
                     Login
                 </button>
             </form>
