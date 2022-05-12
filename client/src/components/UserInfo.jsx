@@ -5,7 +5,7 @@ const UserInfo = (props) => {
 
     return (
         <div>
-            <h2>{props.userState.user.username}</h2>
+            
             
         </div>
     )
