@@ -16,6 +16,8 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
+
+
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     events = serializers.HyperlinkedRelatedField(
         view_name = 'event_detail',
