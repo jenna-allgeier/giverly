@@ -1,5 +1,6 @@
 import { connect } from "react-redux"
 import logo from '../logo.png';
+import { Link } from 'react-router-dom'
 
 
 const Welcome = (props) => {
@@ -7,17 +8,18 @@ const Welcome = (props) => {
     return (
         <div>
             <header className="App-header">
-                <h1>Welcome to giverly!</h1>
+                <h1 className="welcome">Welcome to giverly!</h1>
                 <img src={logo} className="App-logo" alt="logo" />
+                <Link to='login-register'>
+                    <button className="button">Login/Register</button>
+                </Link>
             </header>
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
-    return {
-        appState: state.appState
-    }
+    return {}
 }
 
 const mapActionsToProps = (dispatch) => {

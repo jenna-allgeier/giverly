@@ -2,7 +2,6 @@ import { connect } from "react-redux"
 import { CreateUsername, CreateUserPassword, RegisterUsername, RegisterUserPassword } from "../store/actions/UserActions"
 
 const Register = (props) => {
-    console.log(props)
 
     const handleUsernameChange = (e) => {
         props.createUsername(e.target.value)
@@ -19,10 +18,12 @@ const Register = (props) => {
     }
 
     return (
-        <div>
-            <form action="">
+        <div className="login-register-container">
+            <h2>Don't Have an Account? Sign Up!</h2>
+            <form className='login-register-form'>
                 <input 
                     type="text"
+                    className="input-field"
                     name='username'
                     placeholder="username"
                     value={props.userState.createUsername}
@@ -30,12 +31,14 @@ const Register = (props) => {
                 />
                 <input 
                     type="text"
+                    className="input-field"
                     name='password'
                     placeholder="password"
                     value={props.userState.createUserPassword}
                     onChange={handlePasswordChange}
                 />
-                <button type="submit" onClick={handleSubmit}>
+                {/* add confirm password */}
+                <button type="submit" className="button" onClick={handleSubmit}>
                     Register
                 </button>
             </form>

@@ -4,6 +4,8 @@ import Welcome from './pages/Welcome';
 import Navbar from './components/Navbar';
 // import UserProfile from './pages/UserProfile';
 import LoginRegister from './pages/LoginRegister';
+import Login from './components/Login';
+import Register from './components/Register';
 import Calendar from './pages/Calendar';
 import Cart from './pages/Cart'
 
