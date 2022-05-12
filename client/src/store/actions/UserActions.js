@@ -1,8 +1,14 @@
-import { CURRENT_USER, CREATE_USERNAME, CREATE_USERPASSWORD, REGISTER_USERNAME, REGISTER_USERPASSWORD } from "../types"
+import { CURRENT_USERNAME, CURRENT_USERPASSWORD, CREATE_USERNAME, CREATE_USERPASSWORD, 
+    REGISTER_USERNAME, REGISTER_USERPASSWORD } from "../types"
 
-export const AddUser = (user) => ({
-    type: CURRENT_USER,
+export const AddUsername = (user) => ({
+    type: CURRENT_USERNAME,
     payload: user
+})
+
+export const AddUserPassword = (password) => ({
+    type: CURRENT_USERPASSWORD,
+    payload: password
 })
 
 export const CreateUsername = (username) => ({
