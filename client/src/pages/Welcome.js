@@ -9,9 +9,8 @@ const Welcome = (props) => {
         <div>
             <header className="App-header">
                 <h1 className="welcome">Welcome to giverly!</h1>
-                <img src={logo} className="App-logo" alt="logo" />
                 <Link to='login-register'>
-                    <button className="button">Login/Register</button>
+                    <img src={logo} className="App-logo" alt="logo" />
                 </Link>
             </header>
         </div>
