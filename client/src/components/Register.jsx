@@ -19,7 +19,7 @@ const Register = (props) => {
 
     return (
         <div className="login-register-container">
-            <h2>Don't Have an Account? Sign Up!</h2>
+            <h1>Don't Have an Account? Sign Up!</h1>
             <form className='login-register-form'>
                 <input 
                     type="text"
