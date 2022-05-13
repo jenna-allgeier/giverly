@@ -18,7 +18,7 @@ const Register = (props) => {
     }
 
     return (
-        <div className="login-register-container">
+        <div className="container">
             <h1>Don't Have an Account? Sign Up!</h1>
             <form className='form'>
                 <input 

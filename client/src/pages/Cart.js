@@ -5,7 +5,7 @@ import OrderDetails from "../components/OrderDetails"
 const Cart = (props) => {
 
     return (
-        <div>
+        <div className="container">
             <h1>Make Your Order</h1>
             <form className="form">
                 <label for='events'>Choose Event</label>
