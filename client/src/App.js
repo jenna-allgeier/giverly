@@ -4,7 +4,7 @@ import Welcome from './pages/Welcome';
 import Navbar from './components/Navbar';
 // import UserProfile from './pages/UserProfile';
 import LoginRegister from './pages/LoginRegister';
-import AppCalendar from './pages/Calendar';
+import AppCalendar from './pages/AppCalendar';
 import Cart from './pages/Cart'
 
 function App() {

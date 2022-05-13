@@ -1,7 +1,21 @@
 import {
     ADD_EVENT_TITLE, ADD_EVENT_DSCRP, ADD_EVENT_START,
-    ADD_EVENT_END, ADD_EVENT_IMAGE
+    ADD_EVENT_END, ADD_EVENT_IMAGE, ADD_EVENT
 } from "../types"
+
+export const AddEvent = () => {
+    return async (dispatch) => {
+        try {
+            const event = await CreateEvent()
+            dispatch({
+                type: ADD_EVENT,
+                payload: event
+            })
+        } catch (error) {
+            throw error
+        }
+    }
+}
 
 export const AddEventTitle = (event) => ({
     type: ADD_EVENT_TITLE,

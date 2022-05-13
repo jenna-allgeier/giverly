@@ -31,8 +31,9 @@ const AppCalendar = (props) => {
         props.addEventImage(e.target.value)
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = async (e) => {
+        // e.preventDefault()
+
     }
 
     return (
@@ -46,7 +47,7 @@ const AppCalendar = (props) => {
 
             <div className='events-container'>
                 <h1>Add Your Special Events</h1>
-                <form className='login-register-form'>
+                <form className='form'>
                     <input
                         type="text"
                         className="input-field"
