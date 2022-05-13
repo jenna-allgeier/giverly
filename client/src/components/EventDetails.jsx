@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 
 const EventDetails = (props) => {
 
+
+    
     return (
         <div>
             

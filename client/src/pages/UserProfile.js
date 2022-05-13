@@ -7,6 +7,7 @@ const UserProfile = (props) => {
     return (
         <div>
             <UserInfo />
+            <EventDetails />
         </div>
     )
 }
