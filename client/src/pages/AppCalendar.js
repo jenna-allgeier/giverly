@@ -34,15 +34,13 @@ const AppCalendar = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let event = {
-            title: props.addEventTitle.value,
-            description: props.addEventDscrp.value,
-            event_start: props.addEventStart.value,
-            event_end: props.addEventEnd.value,
-            image: props.addEventImage.value
+            title: props.calendarState.addEventTitle,
+            description: props.calendarState.addEventDscrp,
+            event_start: props.calendarState.addEventStart,
+            event_end: props.calendarState.addEventEnd,
+            image: props.calendarState.addEventImage
         }
-        console.log(event)
-        // props.addEvent(event)
-
+        props.addEvent(event)
     }
 
 
