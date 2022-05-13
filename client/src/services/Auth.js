@@ -23,7 +23,6 @@ export const RegisterUser = async (data) => {
 export const GetAllUsers = async () => {
   try {
     const res = await Client.get("user");
-    console.log('services/Auth:', res.data)
     return res.data;
   } catch (error) {
     throw error;

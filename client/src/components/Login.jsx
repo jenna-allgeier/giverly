@@ -1,7 +1,11 @@
-import { connect } from "react-redux"
-import { AddUsername, AddUserPassword, AddUserId, AllUsers } from "../store/actions/UserActions"
+import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { AddUsername, AddUserPassword, AddUserId, 
+    AllUsers } from "../store/actions/UserActions";
 
 const Login = (props) => {
+
+    let navigate = useNavigate();
 
     const handleUsernameChange = (e) => {
         props.addUsername(e.target.value)
@@ -15,6 +19,7 @@ const Login = (props) => {
         e.preventDefault()
         // check against credentials in backend
         props.allUsers(props.userState.currentUsername)
+        navigate('/calendar')
     }
 
     return (
@@ -37,9 +42,10 @@ const Login = (props) => {
                     value={props.userState.currentUserPassword}
                     onChange={handlePasswordChange}
                 />
-                <button type="submit" className="button" onClick={handleSubmit}>
-                    Login
-                </button>
+                    <button type="submit" className="button" onClick={handleSubmit}>
+                        Login
+                    </button>
+
             </form>
         </div>
 

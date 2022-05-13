@@ -8,12 +8,12 @@ export const AddEvent = (event) => {
     return async (dispatch) => {
         try {
             console.log(event)
-            const createdEvent = await CreateEvent(event)
-            console.log(createdEvent)
-            dispatch({
-                type: ADD_EVENT,
-                payload: event
-            })
+            await CreateEvent(event)
+            console.log(event)
+            // dispatch({
+            //     type: ADD_EVENT,
+            //     payload: event
+            // })
         } catch (error) {
             throw error
         }

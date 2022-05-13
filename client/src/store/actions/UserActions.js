@@ -5,15 +5,10 @@ import { CURRENT_USERNAME, CURRENT_USERPASSWORD, CREATE_USERNAME, CREATE_USERPAS
 export const AllUsers = (username) => {
     return async (dispatch) => {
         try {
-            console.log()
             const userList = await GetAllUsers()
-            console.log(userList)
             let currentUser = userList.find((user) => {
                 return user.username === username
             })
-
-            console.log(currentUser)
-
             dispatch({
                 type: CURRENT_USER_ID,
                 payload: currentUser.id
