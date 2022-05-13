@@ -11,9 +11,9 @@ export const GetEventsByUserId = async (userId) => {
     }
 }
 
-export const CreateEvent = async (data) => {
+export const CreateEvent = async (event) => {
     try {
-        const res = await Client.post('events');
+        const res = await Client.post('events', event);
         console.log(res.data)
         return res.data
     } catch (error) {
