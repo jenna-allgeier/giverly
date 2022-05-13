@@ -6,6 +6,14 @@ const Cart = (props) => {
 
     return (
         <div>
+            <h1>Make Your Order</h1>
+            <form className="login-register-form">
+                <label for='events'>Choose Event</label>
+                <select id='events'>
+                    <option value={'mom'}>Mom's birthday</option>
+                    <option value={'brother'}>Brother's graduation</option>
+                </select>
+            </form>
             <OrderDetails />
         </div>
     )
