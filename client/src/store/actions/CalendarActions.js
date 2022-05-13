@@ -7,8 +7,9 @@ import {
 export const AddEvent = (event) => {
     return async (dispatch) => {
         try {
-            const event = await CreateEvent(event)
             console.log(event)
+            const createdEvent = await CreateEvent(event)
+            console.log(createdEvent)
             // dispatch({
             //     type: ADD_EVENT,
             //     payload: event
