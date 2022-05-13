@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { connect } from "react-redux"
 import Calendar from 'react-calendar'
 import {
-    AddEventTitle, AddEventDscrp, AddEventStart, AddEventEnd,
+    AddEvent, AddEventTitle, AddEventDscrp, AddEventStart, AddEventEnd,
     AddEventImage
 } from '../store/actions/CalendarActions'
 
@@ -31,10 +31,20 @@ const AppCalendar = (props) => {
         props.addEventImage(e.target.value)
     }
 
-    const handleSubmit = async (e) => {
-        // e.preventDefault()
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        let event = {
+            title: props.addEventTitle.value,
+            description: props.addEventDscrp.value,
+            event_start: props.addEventStart.value,
+            event_end: props.addEventEnd.value,
+            image: props.addEventImage.value
+        }
+        console.log(event)
+        // props.addEvent(event)
 
     }
+
 
     return (
         <div className='calendar-container'>
@@ -46,7 +56,7 @@ const AppCalendar = (props) => {
             </div>
 
             <div className='container'>
-                <h1>Add Your Special Events</h1>
+                <h1>Add Your Events</h1>
                 <form className='form'>
                     <input
                         type="text"
@@ -106,6 +116,7 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = (dispatch) => {
     return {
+        addEvent: (event) => dispatch(AddEvent(event)),
         addEventTitle: (event) => dispatch(AddEventTitle(event)),
         addEventDscrp: (event) => dispatch(AddEventDscrp(event)),
         addEventStart: (event) => dispatch(AddEventStart(event)),
