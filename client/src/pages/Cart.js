@@ -8,7 +8,7 @@ const Cart = (props) => {
         <div className="container">
             <h1>Make Your Order</h1>
             <form className="form">
-                <label for='events'>Choose Event</label>
+                <label>Choose Event</label>
                 <select id='events'>
                     <option value={'mom'}>Mom's birthday</option>
                     <option value={'brother'}>Brother's graduation</option>

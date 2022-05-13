@@ -40,7 +40,8 @@ const AppCalendar = (props) => {
             event_end: props.calendarState.addEventEnd,
             image: props.calendarState.addEventImage
         }
-        props.addEvent(event)
+        const newEvent = JSON.stringify(event)
+        props.addEvent(newEvent)
     }
 
 

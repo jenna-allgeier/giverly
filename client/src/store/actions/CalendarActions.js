@@ -10,10 +10,10 @@ export const AddEvent = (event) => {
             console.log(event)
             const createdEvent = await CreateEvent(event)
             console.log(createdEvent)
-            // dispatch({
-            //     type: ADD_EVENT,
-            //     payload: event
-            // })
+            dispatch({
+                type: ADD_EVENT,
+                payload: event
+            })
         } catch (error) {
             throw error
         }
