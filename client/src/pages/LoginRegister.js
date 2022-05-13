@@ -1,13 +1,12 @@
+import Login from "../components/Login"
+import Register from "../components/Register"
+
 const LoginRegister = (props) => {
 
     return (
         <div>
-            <h1>Login</h1>
-            <form>
-                <input
-                
-                />
-            </form>
+            <Login />
+            <Register />
         </div>
     )
 }

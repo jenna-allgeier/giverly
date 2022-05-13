@@ -1,5 +1,28 @@
+import { GetAllUsers } from "../../services/Auth"
 import { CURRENT_USERNAME, CURRENT_USERPASSWORD, CREATE_USERNAME, CREATE_USERPASSWORD, 
-    REGISTER_USERNAME, REGISTER_USERPASSWORD } from "../types"
+    REGISTER_USERNAME, REGISTER_USERPASSWORD, CURRENT_USER_ID, ALL_USERS } from "../types"
+
+export const AllUsers = (username) => {
+    return async (dispatch) => {
+        try {
+            console.log()
+            const userList = await GetAllUsers()
+            console.log(userList)
+            let currentUser = userList.find((user) => {
+                return user.username === username
+            })
+
+            console.log(currentUser)
+
+            dispatch({
+                type: CURRENT_USER_ID,
+                payload: currentUser.id
+            })
+        } catch (error) {
+            throw error
+        }
+    }
+}
 
 export const AddUsername = (user) => ({
     type: CURRENT_USERNAME,
@@ -9,6 +32,11 @@ export const AddUsername = (user) => ({
 export const AddUserPassword = (password) => ({
     type: CURRENT_USERPASSWORD,
     payload: password
+})
+
+export const AddUserId = (userId) => ({
+    type: CURRENT_USER_ID,
+    payload: userId
 })
 
 export const CreateUsername = (username) => ({

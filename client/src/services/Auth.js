@@ -20,6 +20,16 @@ export const RegisterUser = async (data) => {
 
 // research Django check session
 
+export const GetAllUsers = async () => {
+  try {
+    const res = await Client.get("user");
+    console.log('services/Auth:', res.data)
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const CheckSession = async () => {
   try {
     const res = await Client.get("users/session");
