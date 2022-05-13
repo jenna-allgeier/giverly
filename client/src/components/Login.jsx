@@ -17,7 +17,7 @@ const Login = (props) => {
     }
 
     return (
-        <div className="login-register-container">
+        <div className="container">
             <h1>Login to Your Account</h1>
             <form className='form'>
                 <input 

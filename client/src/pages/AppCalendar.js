@@ -45,7 +45,7 @@ const AppCalendar = (props) => {
                     value={value} />
             </div>
 
-            <div className='events-container'>
+            <div className='container'>
                 <h1>Add Your Special Events</h1>
                 <form className='form'>
                     <input
