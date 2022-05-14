@@ -1,5 +1,13 @@
 import Client from './index'
 
+export const GetAllEvents = async () => {
+    try {
+      const res = await Client.get("events");
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
+  };
 
 export const GetEventsByUserId = async (userId) => {
     try {
