@@ -1,12 +1,15 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { connect } from "react-redux"
 import {
     UpdateEventTitle, UpdateEventDscrp, UpdateEventStart, UpdateEventEnd,
-    UpdateEventImage, SendUpdateEvent
+    UpdateEventImage, SendUpdateEvent, SendDeleteEvent
 } from '../store/actions/CalendarActions'
 
 
 const UpdateEvent = (props) => {
+
+    let { eventId } = useParams();
+    eventId = parseInt(eventId);
 
     let navigate = useNavigate();
 
@@ -31,9 +34,10 @@ const UpdateEvent = (props) => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
 
         let event = {
+            id: eventId,
             user_id: props.userState.currentUserId,
             title: props.calendarState.updateEventTitle,
             description: props.calendarState.updateEventDscrp,
@@ -41,8 +45,12 @@ const UpdateEvent = (props) => {
             end_time: props.calendarState.updateEventEnd,
             image: props.calendarState.updateEventImage,
         }
-        props.sendUpdateEvent( event)
+        props.sendUpdateEvent(event)
         navigate('/calendar')
+    }
+
+    const handleDelete = () => {
+        props.sendDeleteEvent(eventId)
     }
 
 
@@ -56,7 +64,7 @@ const UpdateEvent = (props) => {
                         className="input-field"
                         name='title'
                         placeholder="title"
-                        // value={props.calendarState.addEventTitle}
+                        value={props.calendarState.updateEventTitle}
                         onChange={handleUpdateEventTitle}
                     />
                     <input
@@ -64,7 +72,7 @@ const UpdateEvent = (props) => {
                         className="input-field"
                         name='description'
                         placeholder="description"
-                        // value={props.calendarState.addEventDscrp}
+                        value={props.calendarState.updateEventDscrp}
                         onChange={handleUpdateEventDscrp}
                     />
                     <label>Start Date</label>
@@ -72,7 +80,7 @@ const UpdateEvent = (props) => {
                         type="date"
                         className="input-field"
                         name='start-date'
-                        // value={props.calendarState.addEventStart}
+                        value={props.calendarState.updateEventStart}
                         onChange={handleUpdateEventStart}
                     />
                     <label>End Date</label>
@@ -80,7 +88,7 @@ const UpdateEvent = (props) => {
                         type="date"
                         className="input-field"
                         name='end-date'
-                        // value={props.calendarState.addEventEnd}
+                        value={props.calendarState.updateEventEnd}
                         onChange={handleUpdateEventEnd}
                     />
                     <input
@@ -88,11 +96,14 @@ const UpdateEvent = (props) => {
                         className="input-field"
                         name='image'
                         placeholder="image"
-                        // value={props.calendarState.addEventImage}
+                        value={props.calendarState.updateEventImage}
                         onChange={handleUpdateEventImage}
                     />
                     <button type="submit" className="button" onClick={handleSubmit}>
                         Submit Changes
+                    </button>
+                    <button type="submit" className="button" onClick={handleDelete}>
+                        Delete
                     </button>
                 </form>
             </div>
@@ -115,6 +126,7 @@ const mapActionsToProps = (dispatch) => {
         updateEventEnd: (event) => dispatch(UpdateEventEnd(event)),
         updateEventImage: (event) => dispatch(UpdateEventImage(event)),
         sendUpdateEvent: (event) => dispatch(SendUpdateEvent(event)),
+        sendDeleteEvent: (event) => dispatch(SendDeleteEvent(event)),
     }
 }
 
