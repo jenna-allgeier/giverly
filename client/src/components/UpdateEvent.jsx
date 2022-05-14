@@ -2,7 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { connect } from "react-redux"
 import {
     UpdateEventTitle, UpdateEventDscrp, UpdateEventStart, UpdateEventEnd,
-    UpdateEventImage, SendUpdateEvent
+    UpdateEventImage, SendUpdateEvent, SendDeleteEvent
 } from '../store/actions/CalendarActions'
 
 
@@ -47,6 +47,10 @@ const UpdateEvent = (props) => {
         }
         props.sendUpdateEvent(event)
         navigate('/calendar')
+    }
+
+    const handleDelete = () => {
+        props.sendDeleteEvent(eventId)
     }
 
 
@@ -98,6 +102,9 @@ const UpdateEvent = (props) => {
                     <button type="submit" className="button" onClick={handleSubmit}>
                         Submit Changes
                     </button>
+                    <button type="submit" className="button" onClick={handleDelete}>
+                        Delete
+                    </button>
                 </form>
             </div>
         </div>
@@ -119,6 +126,7 @@ const mapActionsToProps = (dispatch) => {
         updateEventEnd: (event) => dispatch(UpdateEventEnd(event)),
         updateEventImage: (event) => dispatch(UpdateEventImage(event)),
         sendUpdateEvent: (event) => dispatch(SendUpdateEvent(event)),
+        sendDeleteEvent: (event) => dispatch(SendDeleteEvent(event)),
     }
 }
 

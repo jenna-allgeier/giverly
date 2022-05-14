@@ -22,6 +22,14 @@ export const GetEventsByUserId = async (userId) => {
 export const CreateEvent = async (event) => {
     try {
         const res = await Client.post('events', event);
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const DeleteEvent = async (eventId) => {
+    try {
+        const res = await Client.delete(`event/${eventId}`);
         console.log(res.data)
         return res.data
     } catch (error) {

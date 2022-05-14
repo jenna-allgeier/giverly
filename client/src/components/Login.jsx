@@ -19,7 +19,7 @@ const Login = (props) => {
         e.preventDefault()
         // check against credentials in backend
         props.allUsers(props.userState.currentUsername)
-        navigate('/calendar')
+        navigate('/')
     }
 
     return (

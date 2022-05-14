@@ -1,4 +1,5 @@
-import { CreateEvent, GetEventsByUserId, GetAllEvents, UpdateEvent } from "../../services/Cal"
+import { CreateEvent, GetEventsByUserId, GetAllEvents, UpdateEvent,
+DeleteEvent } from "../../services/Cal"
 import {
     ADD_EVENT_TITLE, ADD_EVENT_DSCRP, ADD_EVENT_START,
     ADD_EVENT_END, ADD_EVENT_IMAGE, ALL_EVENTS, UPDATE_EVENT_TITLE,
@@ -23,20 +24,6 @@ export const LoadAllEvents = (userId) => {
     }
 }
 
-export const LoadEventsByUserId = (userId) => {
-    return async (dispatch) => {
-        try {
-            const events = await GetEventsByUserId(userId)
-            dispatch({
-                type: ALL_EVENTS,
-                payload: events
-            })
-        } catch (error) {
-            throw error
-        }
-    }
-}
-
 export const AddEvent = (event) => {
     return async () => {
         try {
@@ -53,6 +40,17 @@ export const SendUpdateEvent = (event) => {
             console.log(event.id)
             await UpdateEvent(event.id, event)
             console.log(event)
+        } catch (error) {
+            throw error
+        }
+    }
+}
+
+export const SendDeleteEvent = (eventId) => {
+    return async () => {
+        console.log(eventId)
+        try {
+            await DeleteEvent(eventId)
         } catch (error) {
             throw error
         }
