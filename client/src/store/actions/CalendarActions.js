@@ -1,4 +1,4 @@
-import { CreateEvent, GetEventsByUserId, GetAllEvents } from "../../services/Cal"
+import { CreateEvent, GetEventsByUserId, GetAllEvents, UpdateEvent } from "../../services/Cal"
 import {
     ADD_EVENT_TITLE, ADD_EVENT_DSCRP, ADD_EVENT_START,
     ADD_EVENT_END, ADD_EVENT_IMAGE, ALL_EVENTS
@@ -40,8 +40,19 @@ export const LoadEventsByUserId = (userId) => {
 export const AddEvent = (event) => {
     return async () => {
         try {
-            console.log(event)
             await CreateEvent(event)
+        } catch (error) {
+            throw error
+        }
+    }
+}
+
+export const SendUpdateEvent = (eventId, event) => {
+    return async () => {
+        try {
+            console.log(eventId)
+            console.log(event)
+            await UpdateEvent(eventId, event)
             console.log(event)
         } catch (error) {
             throw error

@@ -1,10 +1,14 @@
 import { connect } from "react-redux"
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const EventDetails = (props) => {
 
+let navigate = useNavigate()
 
+const navigateToUpdate = (eventId) => {
+    navigate(`/update-event/${eventId}`)
+}
     
     return (
         <div>
@@ -16,9 +20,7 @@ const EventDetails = (props) => {
                                     <h3>{eventDetail.description}</h3>
                                     <img className='image' src={eventDetail.image}
                                     alt='event image'/>
-                                    <Link to='/update-event'>
-                                    <button className="button">Edit</button>
-                                    </Link>
+                                    <button className="button" onClick={() => navigateToUpdate(eventDetail.id)}>Edit</button>
                                 </div>
                             );
                         })}

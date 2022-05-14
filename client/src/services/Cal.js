@@ -28,3 +28,13 @@ export const CreateEvent = async (event) => {
         throw error;
     }
 }
+
+export const UpdateEvent = async (eventId, event) => {
+    try {
+        const res = await Client.put(`event/${eventId}`, event);
+        console.log(res.data)
+        return res.data
+    } catch (error) {
+        throw error;
+    }
+}
