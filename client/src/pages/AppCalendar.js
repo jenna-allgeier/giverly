@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { connect } from "react-redux"
 import Calendar from 'react-calendar'
 import {
@@ -10,6 +10,7 @@ import {
 
 const AppCalendar = (props) => {
 
+    let navigate = useNavigate()
     const [value, onChange] = useState(new Date());
 
     const handleEventTitle = (e) => {
@@ -44,10 +45,10 @@ const AppCalendar = (props) => {
             image: props.calendarState.addEventImage,
         }
         props.addEvent(event)
+        navigate('/cart')
     }
 
     useEffect(() => {
-        console.log('loading all events')
         props.loadAllEvents(props.userState.currentUserId)
     }, [])
 

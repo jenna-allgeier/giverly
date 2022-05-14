@@ -46,11 +46,12 @@ const UpdateEvent = (props) => {
             image: props.calendarState.updateEventImage,
         }
         props.sendUpdateEvent(event)
-        navigate('/calendar')
+        navigate('/event-details')
     }
 
     const handleDelete = () => {
         props.sendDeleteEvent(eventId)
+        navigate('/event-details')
     }
 
 

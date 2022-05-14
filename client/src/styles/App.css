@@ -30,15 +30,13 @@
 .container {
   background: rgb(255, 255, 255, 0.35);
   border-radius: 5px;
-  padding: 10px;
+  padding: 30px;
   margin: 20px;
 }
 
 .page-style {
   background-image: url('https://images.pexels.com/photos/2117937/pexels-photo-2117937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-  height: 500px;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -82,10 +80,10 @@ h1, h2, h3, h4, p, label {
   opacity: 0.5;
 }
 
-.image {
+/* .image {
   height: 50vmin;
   pointer-events: none;
-}
+} */
 
 /* ------- nav ---------- */
 
@@ -258,5 +256,28 @@ h1, h2, h3, h4, p, label {
   background-color: #e6e6e6;
 }
 
+/* ------- event details ---------- */
+
+
+.eventDetails-container {
+  margin-top: 100px;
+}
+
+.event {
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.event-image {
+  max-width: 500px;
+  margin: 10px;
+}
 
 /* ------- cart ---------- */
+
+#dropdown {
+  margin-bottom: 50px;
+}
