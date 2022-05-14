@@ -1,18 +1,18 @@
 import { CreateEvent, GetEventsByUserId, GetAllEvents, UpdateEvent } from "../../services/Cal"
 import {
     ADD_EVENT_TITLE, ADD_EVENT_DSCRP, ADD_EVENT_START,
-    ADD_EVENT_END, ADD_EVENT_IMAGE, ALL_EVENTS
+    ADD_EVENT_END, ADD_EVENT_IMAGE, ALL_EVENTS, UPDATE_EVENT_TITLE,
+    UPDATE_EVENT_DSCRP, UPDATE_EVENT_START, UPDATE_EVENT_END,
+    UPDATE_EVENT_IMAGE,
 } from "../types"
 
 export const LoadAllEvents = (userId) => {
-    console.log(userId)
     return async (dispatch) => {
         try {
             const getEventList = await GetAllEvents()
             let eventList = getEventList.filter((event) => {
                 return event.user_id === parseInt(userId)
             })
-            console.log(getEventList)
             dispatch({
                 type: ALL_EVENTS,
                 payload: eventList
@@ -47,12 +47,11 @@ export const AddEvent = (event) => {
     }
 }
 
-export const SendUpdateEvent = (eventId, event) => {
+export const SendUpdateEvent = (event) => {
     return async () => {
         try {
-            console.log(eventId)
-            console.log(event)
-            await UpdateEvent(eventId, event)
+            console.log(event.id)
+            await UpdateEvent(event.id, event)
             console.log(event)
         } catch (error) {
             throw error
@@ -86,26 +85,26 @@ export const AddEventImage = (event) => ({
 })
 
 export const UpdateEventTitle = (event) => ({
-    type: ADD_EVENT_TITLE,
+    type: UPDATE_EVENT_TITLE,
     payload: event
 })
 
 export const UpdateEventDscrp = (event) => ({
-    type: ADD_EVENT_DSCRP,
+    type: UPDATE_EVENT_DSCRP,
     payload: event
 })
 
 export const UpdateEventStart = (event) => ({
-    type: ADD_EVENT_START,
+    type: UPDATE_EVENT_START,
     payload: event
 })
 
 export const UpdateEventEnd = (event) => ({
-    type: ADD_EVENT_END,
+    type: UPDATE_EVENT_END,
     payload: event
 })
 
 export const UpdateEventImage = (event) => ({
-    type: ADD_EVENT_IMAGE,
+    type: UPDATE_EVENT_IMAGE,
     payload: event
 })

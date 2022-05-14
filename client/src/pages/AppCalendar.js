@@ -47,7 +47,6 @@ const AppCalendar = (props) => {
     }
 
     useEffect(() => {
-        console.log(props.calendarState.allEvents)
         props.loadAllEvents(props.userState.currentUserId)
     }, [])
 
