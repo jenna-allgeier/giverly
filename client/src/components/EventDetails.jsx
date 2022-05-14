@@ -11,14 +11,14 @@ const navigateToUpdate = (eventId) => {
 }
     
     return (
-        <div>
+        <div className="eventDetails-container">
             <div className="eventDetails">
                         {props.calendarState.allEvents.map((eventDetail) => {
                             return (
-                                <div className="eventDetail">
+                                <div key={eventDetail.id} className="event container">
                                     <h1>{eventDetail.title}</h1>
                                     <h3>{eventDetail.description}</h3>
-                                    <img className='image' src={eventDetail.image}
+                                    <img className='image event-image' src={eventDetail.image}
                                     alt='event image'/>
                                     <button className="button" onClick={() => navigateToUpdate(eventDetail.id)}>Edit</button>
                                 </div>

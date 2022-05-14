@@ -9,10 +9,12 @@ const Cart = (props) => {
             <h1>Make Your Order</h1>
             <form className="form">
                 <label>Choose Event</label>
-                <select id='events'>
+                <select id='dropdown'>
                     <option value={'mom'}>Mom's birthday</option>
                     <option value={'brother'}>Brother's graduation</option>
+                    <option value={'brother'}>Sister's baby shower</option>
                 </select>
+                <button className="button">Connect to E-cart</button>
             </form>
             <OrderDetails />
         </div>
