@@ -6,6 +6,8 @@ import Navbar from './components/Navbar';
 import LoginRegister from './pages/LoginRegister';
 import AppCalendar from './pages/AppCalendar';
 import Cart from './pages/Cart'
+import EventDetails from './components/EventDetails'
+import UpdateEvent from './components/UpdateEvent';
 
 function App() {
   return (
@@ -37,6 +39,16 @@ function App() {
             <Route path={'cart'}
               element={
                 <Cart />
+              }    
+            />
+            <Route path={'event-details'}
+              element={
+                <EventDetails />
+              }    
+            />
+            <Route path={'update-event'}
+              element={
+                <UpdateEvent />
               }    
             />
           </Routes>

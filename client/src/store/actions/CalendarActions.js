@@ -73,3 +73,28 @@ export const AddEventImage = (event) => ({
     type: ADD_EVENT_IMAGE,
     payload: event
 })
+
+export const UpdateEventTitle = (event) => ({
+    type: ADD_EVENT_TITLE,
+    payload: event
+})
+
+export const UpdateEventDscrp = (event) => ({
+    type: ADD_EVENT_DSCRP,
+    payload: event
+})
+
+export const UpdateEventStart = (event) => ({
+    type: ADD_EVENT_START,
+    payload: event
+})
+
+export const UpdateEventEnd = (event) => ({
+    type: ADD_EVENT_END,
+    payload: event
+})
+
+export const UpdateEventImage = (event) => ({
+    type: ADD_EVENT_IMAGE,
+    payload: event
+})
