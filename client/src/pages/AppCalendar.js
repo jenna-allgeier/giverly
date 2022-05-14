@@ -31,15 +31,20 @@ const AppCalendar = (props) => {
         props.addEventImage(e.target.value)
     }
 
+    
+
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log(props.userState.currentUserId)
         let event = {
+            user_id: props.userState.currentUserId,
             title: props.calendarState.addEventTitle,
             description: props.calendarState.addEventDscrp,
-            event_start: props.calendarState.addEventStart,
-            event_end: props.calendarState.addEventEnd,
-            image: props.calendarState.addEventImage
+            start_time: props.calendarState.addEventStart,
+            end_time: props.calendarState.addEventEnd,
+            image: props.calendarState.addEventImage,
         }
+        // const newEvent = JSON.stringify(event)
         props.addEvent(event)
     }
 
@@ -108,7 +113,8 @@ const AppCalendar = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        calendarState: state.calendarState
+        calendarState: state.calendarState,
+        userState: state.userState
     }
 }
 

@@ -1,7 +1,11 @@
-import { connect } from "react-redux"
-import { AddUsername, AddUserPassword } from "../store/actions/UserActions"
+import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { AddUsername, AddUserPassword, AddUserId, 
+    AllUsers } from "../store/actions/UserActions";
 
 const Login = (props) => {
+
+    let navigate = useNavigate();
 
     const handleUsernameChange = (e) => {
         props.addUsername(e.target.value)
@@ -14,34 +18,37 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         // check against credentials in backend
+        props.allUsers(props.userState.currentUsername)
+        navigate('/calendar')
     }
 
     return (
         <div className="container">
             <h1>Login to Your Account</h1>
             <form className='form'>
-                <input 
+                <input
                     type="text"
                     className="input-field"
                     name='username'
                     placeholder="username"
-                    value={props.userState.addUsername}
+                    value={props.userState.currentUsername}
                     onChange={handleUsernameChange}
                 />
-                <input 
+                <input
                     type="text"
                     className="input-field"
                     name='password'
                     placeholder="password"
-                    value={props.userState.addUserPassword}
+                    value={props.userState.currentUserPassword}
                     onChange={handlePasswordChange}
                 />
-                <button type="submit" className="button" onClick={handleSubmit}>
-                    Login
-                </button>
+                    <button type="submit" className="button" onClick={handleSubmit}>
+                        Login
+                    </button>
+
             </form>
         </div>
-        
+
     )
 }
 
@@ -55,6 +62,8 @@ const mapActionsToProps = (dispatch) => {
     return {
         addUsername: (username) => dispatch(AddUsername(username)),
         addUserPassword: (password) => dispatch(AddUserPassword(password)),
+        addUserId: (userId) => dispatch(AddUserId(userId)),
+        allUsers: (user) => dispatch(AllUsers(user)),
     }
 }
 

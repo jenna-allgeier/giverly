@@ -21,7 +21,7 @@ const Register = (props) => {
         <div className="container">
             <h1>Don't Have an Account? Sign Up!</h1>
             <form className='form'>
-                <input 
+                <input
                     type="text"
                     className="input-field"
                     name='username'
@@ -29,7 +29,7 @@ const Register = (props) => {
                     value={props.userState.createUsername}
                     onChange={handleUsernameChange}
                 />
-                <input 
+                <input
                     type="text"
                     className="input-field"
                     name='password'
@@ -43,7 +43,7 @@ const Register = (props) => {
                 </button>
             </form>
         </div>
-        
+
     )
 }
 
