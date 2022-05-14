@@ -1,19 +1,29 @@
-import { CreateEvent } from "../../services/Cal"
+import { CreateEvent, GetEventsByUserId } from "../../services/Cal"
 import {
     ADD_EVENT_TITLE, ADD_EVENT_DSCRP, ADD_EVENT_START,
-    ADD_EVENT_END, ADD_EVENT_IMAGE, ADD_EVENT
+    ADD_EVENT_END, ADD_EVENT_IMAGE, ALL_EVENTS
 } from "../types"
 
-export const AddEvent = (event) => {
+export const LoadAllEvents = (userId) => {
     return async (dispatch) => {
+        try {
+            const events = await GetEventsByUserId(userId)
+            dispatch({
+                type: ALL_EVENTS,
+                payload: events
+            })
+        } catch (error) {
+            throw error
+        }
+    }
+}
+
+export const AddEvent = (event) => {
+    return async () => {
         try {
             console.log(event)
             await CreateEvent(event)
             console.log(event)
-            // dispatch({
-            //     type: ADD_EVENT,
-            //     payload: event
-            // })
         } catch (error) {
             throw error
         }

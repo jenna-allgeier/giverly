@@ -1,6 +1,6 @@
 import {
     ADD_EVENT_TITLE, ADD_EVENT_DSCRP, ADD_EVENT_START,
-    ADD_EVENT_END, ADD_EVENT_IMAGE
+    ADD_EVENT_END, ADD_EVENT_IMAGE, ALL_EVENTS
 } from "../types"
 
 const initialState = {
@@ -9,6 +9,7 @@ const initialState = {
     addEventStart: '',
     addEventEnd: '',
     addEventImage: '',
+    allEvents: [],
 }
 
 const CalendarReducer = (state = initialState, action) => {
@@ -23,6 +24,8 @@ const CalendarReducer = (state = initialState, action) => {
             return { ...state, addEventEnd: action.payload }
         case ADD_EVENT_IMAGE:
             return { ...state, addEventImage: action.payload }
+        case ALL_EVENTS:
+            return { ...state, allEvents: action.payload }
         default:
             return { ...state }
     }
