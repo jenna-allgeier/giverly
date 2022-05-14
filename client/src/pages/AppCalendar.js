@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { connect } from "react-redux"
 import Calendar from 'react-calendar'
 import {
     AddEvent, AddEventTitle, AddEventDscrp, AddEventStart, AddEventEnd,
     AddEventImage, LoadAllEvents
 } from '../store/actions/CalendarActions'
-import EventDetails from '../components/EventDetails'
 
 
 const AppCalendar = (props) => {
@@ -110,19 +110,10 @@ const AppCalendar = (props) => {
                 </form>
 
                 <div>
-                    <h1>All Your Events</h1>
-                    <div className="eventDetails">
-                        {props.calendarState.allEvents.map((eventDetail) => {
-                            return (
-                                <div className="eventDetail">
-                                    <h2>{eventDetail.title}</h2>
-                                    <p>{eventDetail.description}</p>
-                                    <img className='image' src={eventDetail.image}
-                                    alt='event image'/>
-                                </div>
-                            );
-                        })}
-                    </div>
+                    <h1></h1>
+                    <Link to='/event-details'>
+                    <button className='button'>All Your Events</button>
+                    </Link>
                 </div>
 
             </div>
