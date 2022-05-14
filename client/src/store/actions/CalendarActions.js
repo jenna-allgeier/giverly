@@ -1,10 +1,29 @@
-import { CreateEvent, GetEventsByUserId } from "../../services/Cal"
+import { CreateEvent, GetEventsByUserId, GetAllEvents } from "../../services/Cal"
 import {
     ADD_EVENT_TITLE, ADD_EVENT_DSCRP, ADD_EVENT_START,
     ADD_EVENT_END, ADD_EVENT_IMAGE, ALL_EVENTS
 } from "../types"
 
 export const LoadAllEvents = (userId) => {
+    console.log(userId)
+    return async (dispatch) => {
+        try {
+            const getEventList = await GetAllEvents()
+            let eventList = getEventList.filter((event) => {
+                return event.user_id === parseInt(userId)
+            })
+            console.log(getEventList)
+            dispatch({
+                type: ALL_EVENTS,
+                payload: eventList
+            })
+        } catch (error) {
+            throw error
+        }
+    }
+}
+
+export const LoadEventsByUserId = (userId) => {
     return async (dispatch) => {
         try {
             const events = await GetEventsByUserId(userId)

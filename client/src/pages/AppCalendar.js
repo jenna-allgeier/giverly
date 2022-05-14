@@ -34,7 +34,7 @@ const AppCalendar = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+
         let event = {
             user_id: props.userState.currentUserId,
             title: props.calendarState.addEventTitle,
@@ -46,12 +46,9 @@ const AppCalendar = (props) => {
         props.addEvent(event)
     }
 
-    
-
     useEffect(() => {
-        const userId = props.userState.currentUserId
-        console.log(userId)
-        props.loadAllEvents(userId)
+        console.log(props.calendarState.allEvents)
+        props.loadAllEvents(props.userState.currentUserId)
     }, [])
 
 
@@ -114,7 +111,18 @@ const AppCalendar = (props) => {
 
                 <div>
                     <h1>All Your Events</h1>
-
+                    <div className="eventDetails">
+                        {props.calendarState.allEvents.map((eventDetail) => {
+                            return (
+                                <div className="eventDetail">
+                                    <h2>{eventDetail.title}</h2>
+                                    <p>{eventDetail.description}</p>
+                                    <img className='image' src={eventDetail.image}
+                                    alt='event image'/>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
 
             </div>
