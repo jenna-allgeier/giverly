@@ -3,8 +3,9 @@ import { connect } from "react-redux"
 import Calendar from 'react-calendar'
 import {
     AddEvent, AddEventTitle, AddEventDscrp, AddEventStart, AddEventEnd,
-    AddEventImage
+    AddEventImage, LoadAllEvents
 } from '../store/actions/CalendarActions'
+import EventDetails from '../components/EventDetails'
 
 
 const AppCalendar = (props) => {
@@ -31,11 +32,9 @@ const AppCalendar = (props) => {
         props.addEventImage(e.target.value)
     }
 
-    
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(props.userState.currentUserId)
+        
         let event = {
             user_id: props.userState.currentUserId,
             title: props.calendarState.addEventTitle,
@@ -44,9 +43,16 @@ const AppCalendar = (props) => {
             end_time: props.calendarState.addEventEnd,
             image: props.calendarState.addEventImage,
         }
-        // const newEvent = JSON.stringify(event)
         props.addEvent(event)
     }
+
+    
+
+    useEffect(() => {
+        const userId = props.userState.currentUserId
+        console.log(userId)
+        props.loadAllEvents(userId)
+    }, [])
 
 
     return (
@@ -106,6 +112,11 @@ const AppCalendar = (props) => {
                     </button>
                 </form>
 
+                <div>
+                    <h1>All Your Events</h1>
+
+                </div>
+
             </div>
         </div>
     )
@@ -126,6 +137,7 @@ const mapActionsToProps = (dispatch) => {
         addEventStart: (event) => dispatch(AddEventStart(event)),
         addEventEnd: (event) => dispatch(AddEventEnd(event)),
         addEventImage: (event) => dispatch(AddEventImage(event)),
+        loadAllEvents: (userId) => dispatch(LoadAllEvents(userId)),
     }
 }
 
