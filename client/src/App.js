@@ -46,7 +46,7 @@ function App() {
                 <EventDetails />
               }    
             />
-            <Route path={'update-event'}
+            <Route path={'update-event/:eventId'}
               element={
                 <UpdateEvent />
               }    

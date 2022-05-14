@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { connect } from "react-redux"
 import {
     UpdateEventTitle, UpdateEventDscrp, UpdateEventStart, UpdateEventEnd,
-    UpdateEventImage,
+    UpdateEventImage, SendUpdateEvent
 } from '../store/actions/CalendarActions'
 
 
@@ -10,23 +10,23 @@ const UpdateEvent = (props) => {
 
     let navigate = useNavigate();
 
-    const handleEventTitle = (e) => {
+    const handleUpdateEventTitle = (e) => {
         props.updateEventTitle(e.target.value)
     }
 
-    const handleEventDscrp = (e) => {
+    const handleUpdateEventDscrp = (e) => {
         props.updateEventDscrp(e.target.value)
     }
 
-    const handleEventStart = (e) => {
+    const handleUpdateEventStart = (e) => {
         props.updateEventStart(e.target.value)
     }
 
-    const handleEventEnd = (e) => {
+    const handleUpdateEventEnd = (e) => {
         props.updateEventEnd(e.target.value)
     }
 
-    const handleEventImage = (e) => {
+    const handleUpdateEventImage = (e) => {
         props.updateEventImage(e.target.value)
     }
 
@@ -41,13 +41,13 @@ const UpdateEvent = (props) => {
             end_time: props.calendarState.updateEventEnd,
             image: props.calendarState.updateEventImage,
         }
-        props.updateEvent(event)
+        props.sendUpdateEvent( event)
         navigate('/calendar')
     }
 
 
     return (
-        <div className='update-event'>
+        <div>
             <div className='container'>
                 <h1>Edit Your Event</h1>
                 <form className='form'>
@@ -56,40 +56,40 @@ const UpdateEvent = (props) => {
                         className="input-field"
                         name='title'
                         placeholder="title"
-                        value={props.calendarState.updateEventTitle}
-                        onChange={handleEventTitle}
+                        // value={props.calendarState.addEventTitle}
+                        onChange={handleUpdateEventTitle}
                     />
                     <input
                         type="text"
                         className="input-field"
                         name='description'
                         placeholder="description"
-                        value={props.calendarState.updateEventDscrp}
-                        onChange={handleEventDscrp}
+                        // value={props.calendarState.addEventDscrp}
+                        onChange={handleUpdateEventDscrp}
                     />
                     <label>Start Date</label>
                     <input
                         type="date"
                         className="input-field"
                         name='start-date'
-                        value={props.calendarState.updateEventStart}
-                        onChange={handleEventStart}
+                        // value={props.calendarState.addEventStart}
+                        onChange={handleUpdateEventStart}
                     />
                     <label>End Date</label>
                     <input
                         type="date"
                         className="input-field"
                         name='end-date'
-                        value={props.calendarState.updateEventEnd}
-                        onChange={handleEventEnd}
+                        // value={props.calendarState.addEventEnd}
+                        onChange={handleUpdateEventEnd}
                     />
                     <input
                         type="text"
                         className="input-field"
                         name='image'
                         placeholder="image"
-                        value={props.calendarState.updateEventImage}
-                        onChange={handleEventImage}
+                        // value={props.calendarState.addEventImage}
+                        onChange={handleUpdateEventImage}
                     />
                     <button type="submit" className="button" onClick={handleSubmit}>
                         Submit Changes
@@ -114,6 +114,7 @@ const mapActionsToProps = (dispatch) => {
         updateEventStart: (event) => dispatch(UpdateEventStart(event)),
         updateEventEnd: (event) => dispatch(UpdateEventEnd(event)),
         updateEventImage: (event) => dispatch(UpdateEventImage(event)),
+        sendUpdateEvent: (event) => dispatch(SendUpdateEvent(event)),
     }
 }
 
