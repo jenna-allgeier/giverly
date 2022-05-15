@@ -1,8 +1,7 @@
 &nbsp;
-![Giverly](./assets/giverly.png)
+![Giverly](./assets/giverly-readme.png)
 &nbsp;
 
-***
 ## Date: 05/16/2022
 
 ### By: 

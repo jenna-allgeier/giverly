@@ -5,9 +5,10 @@
 }
 
 .App-logo, .login-register {
-  height: 70vmin;
+  height: 55vmin;
   pointer-events: none;
   border-radius: 500px;
+  margin-bottom: -20px;
 }
 
 .App-header, .form {
@@ -47,10 +48,11 @@
 }
 
 h1, h2, h4, p, label {
-  color: rgb(255, 241, 221);
+  color: #fff1dd;
   text-shadow: 2px 2px 6px rgb(0, 0, 0, .6);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .button {
   margin: 10px;
@@ -128,7 +130,12 @@ h1, h2, h4, p, label {
 /* ------- welcome ---------- */
 
 .welcome {
-  margin-top: -50px;
+  color: #343942;
+  text-shadow: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 55px;
+  margin-bottom: -5px;
+  margin-top: -5px;
 }
 
 /* ------- login/register ---------- */
