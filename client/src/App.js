@@ -54,6 +54,9 @@ function App() {
           </Routes>
         </div>
       </main>
+      <div className='footer'>
+        <h3 className='footer-text'>Want to see more? Checkout <a href="https://jenna-allgeier.surge.sh/" target="blank" className='my-portfolio'>My Portfolio</a></h3>
+      </div>
     </div>
   );
 }
