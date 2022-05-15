@@ -28,7 +28,7 @@ Take care of all your gift-giving for the year by simply adding the important da
   * Password
 * Calendar
   * (CRUD) calendar items
-* Orders:
+* Cart:
   * makes calls to ECart API
   * item name
   * price
@@ -38,17 +38,18 @@ Take care of all your gift-giving for the year by simply adding the important da
 ### ***App Screenshots:***
 
 ### ****Home Page****
-![Home Page]()
+![Home Page](./assets/Screen-Shot-Home.png)
 
-### ****Login and Register****
-![Calendar]()
+### ****Calendar****
+![Calendar](./assets/Screen-Shot-Calendar.png)
 
-### ****Feed**** 
+### ****Events Page**** 
 
-![Order Page]()
+![Events Page](./assets/Screen-Shot-Events.png)
 
-
+&nbsp;
 ### **DEPLOYED APP AT [Coming soon!]()**
+&nbsp;
 
 ### ***Technologies***
 
@@ -67,10 +68,11 @@ Take care of all your gift-giving for the year by simply adding the important da
 
 &nbsp;
 ### **Known Issues**
-* None yet!
+* Ecart API not connected yet.
 
 &nbsp;
 ### ***Future Updates***
+* Connect Ecart API
 * Automate cart ordering
 
 &nbsp;
@@ -88,6 +90,6 @@ Take care of all your gift-giving for the year by simply adding the important da
 ### ***Credits***
 
 - https://stackoverflow.com/
-- https://www.w3schools.com/css/css3_buttons.asp
 - https://designs.ai/colors/
-- https://www.google.com/imghp?hl=en&ogbl
+- https://www.pexels.com/
+- https://www.dafontfree.io/download/glacial-indifference/
