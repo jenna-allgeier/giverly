@@ -1,0 +1,1 @@
+web: gunicorn giverly_django.wsgi

@@ -6,7 +6,7 @@
 
 ### By: 
 
-#### Jenna Allgeier | [Github](https://github.com/jenna-allgeier) | [LinkedIn](https://www.linkedin.com/in/jenna-allgeier/)
+#### Jenna Allgeier | [Github](https://github.com/jenna-allgeier) | [LinkedIn](https://www.linkedin.com/in/jenna-allgeier/) | [Portfolio](https://jenna-allgeier.surge.sh/)
 
 &nbsp;
 ## ***DESCRIPTION***
@@ -37,18 +37,18 @@ Take care of all your gift-giving for the year by simply adding the important da
 
 ### ***App Screenshots:***
 
-### ****Home Page****
+#### ****Home Page****
 ![Home Page](./assets/Screen-Shot-Home.png)
 
-### ****Calendar****
+#### ****Calendar****
 ![Calendar](./assets/Screen-Shot-Calendar.png)
 
-### ****Events Page**** 
+#### ****Events Page**** 
 
 ![Events Page](./assets/Screen-Shot-Events.png)
 
 &nbsp;
-### **DEPLOYED APP AT [Coming soon!]()**
+### **Click [here](https://giverly-gifts.herokuapp.com/) for deployed app.**
 &nbsp;
 
 ### ***Technologies***
@@ -63,11 +63,12 @@ Take care of all your gift-giving for the year by simply adding the important da
 * Heroku
 
 &nbsp;
-### **Instructions for Developers**
+### ***Instructions for Developers***
 * Fork and clone this repo.
 
 &nbsp;
-### **Known Issues**
+### ***Known Issues***
+* Sessions authentication not set-up yet.
 * Ecart API not connected yet.
 
 &nbsp;
@@ -77,13 +78,13 @@ Take care of all your gift-giving for the year by simply adding the important da
 
 &nbsp;
 
-### **BUILDING PLAN**
+### ***Building Plan***
 
-##### **CHECK OUT MORE ON [TRELLO](https://trello.com/invite/b/artS1Pwv/ec83e0315e1ba426c39c293781f720de/giverly)**
+* ##### **CHECK OUT MORE ON [TRELLO](https://trello.com/invite/b/artS1Pwv/ec83e0315e1ba426c39c293781f720de/giverly)**
 
-##### **LINK TO THE [ERD](https://drive.google.com/file/d/1-cOzkpCzTNDkAvlA43sFyUmChHMm8VFw/view?usp=sharing)**
+* ##### **LINK TO THE [ERD](https://drive.google.com/file/d/1-cOzkpCzTNDkAvlA43sFyUmChHMm8VFw/view?usp=sharing)**
 
-##### **LINK TO THE [CHD](https://drive.google.com/file/d/1S2vc1W-37NNE69ydtKRENHX5VDEr8bEM/view?usp=sharing)**
+* ##### **LINK TO THE [CHD](https://drive.google.com/file/d/1S2vc1W-37NNE69ydtKRENHX5VDEr8bEM/view?usp=sharing)**
 
 &nbsp;
 

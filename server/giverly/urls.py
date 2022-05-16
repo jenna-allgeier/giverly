@@ -8,5 +8,6 @@ urlpatterns = [
     path('user', views.UserList.as_view(), name='user_list'),
     path('event/<int:pk>', views.EventDetail.as_view(), name='event_detail'),
     path('events', views.EventList.as_view(), name='event_list'),
-    path('userLogin', views.UserLogin)
+    path('userLogin', views.UserLogin),
+    path('logout', views.logout_view)
 ]

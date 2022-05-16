@@ -8,6 +8,7 @@ import AppCalendar from './pages/AppCalendar';
 import Cart from './pages/Cart'
 import EventDetails from './components/EventDetails'
 import UpdateEvent from './components/UpdateEvent';
+import Logout from './components/Logout';
 
 function App() {
   return (
@@ -49,6 +50,11 @@ function App() {
             <Route path={'update-event/:eventId'}
               element={
                 <UpdateEvent />
+              }    
+            />
+            <Route path={'logout'}
+              element={
+                <Logout />
               }    
             />
           </Routes>

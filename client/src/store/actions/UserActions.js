@@ -1,6 +1,6 @@
-import { GetAllUsers } from "../../services/Auth"
+import { GetAllUsers, LogoutUser, SignInUser } from "../../services/Auth"
 import { CURRENT_USERNAME, CURRENT_USERPASSWORD, CREATE_USERNAME, CREATE_USERPASSWORD, 
-    REGISTER_USERNAME, REGISTER_USERPASSWORD, CURRENT_USER_ID, ALL_USERS } from "../types"
+    REGISTER_USERNAME, REGISTER_USERPASSWORD, CURRENT_USER_ID } from "../types"
 
 export const AllUsers = (username) => {
     return async (dispatch) => {
@@ -13,6 +13,26 @@ export const AllUsers = (username) => {
                 type: CURRENT_USER_ID,
                 payload: currentUser.id
             })
+        } catch (error) {
+            throw error
+        }
+    }
+}
+
+export const SendLogin = (data) => {
+    return async () => {
+        try {
+            await SignInUser(data)
+        } catch (error) {
+            throw error
+        }
+    }
+}
+
+export const Logout = () => {
+    return async () => {
+        try {
+            await LogoutUser()
         } catch (error) {
             throw error
         }
