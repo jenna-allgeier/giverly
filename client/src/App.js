@@ -28,10 +28,6 @@ function App() {
                 <LoginRegister />
                 } 
             />
-            {/* <Route path={`user-profile/${userId}`}
-              element={
-                <UserProfile />} 
-                /> */}
             <Route path={'calendar'}
               element={
                 <AppCalendar />
