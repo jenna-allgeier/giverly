@@ -9,13 +9,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import json
 
-# Initial test view.
+# initial test view
 
-# def user_detail(request, pk):
-#     user = User.objects.get(id=pk)
-#     return render(request, 'giverly/user_detail.html', {'user': user})
+def user_detail(request, pk):
+    user = User.objects.get(id=pk)
+    return render(request, 'giverly/user_detail.html', {'user': user})
 
-# make user profile with user details and event
+# all other views
 
 class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
