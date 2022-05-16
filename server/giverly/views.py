@@ -34,11 +34,20 @@ class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = EventSerializer
 
 def UserLogin(request):
+    print('attempting login')
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
+        print('login success')
         return(json.dumps({"results":"success"}))
     else:
+        print('login fail')
         return(json.dumps({"results":"fail"}))
+
+def logout_view(request):
+    
+    logout(request)
+    print('logout success')
+    return(json.dumps({"results":"logout"}))

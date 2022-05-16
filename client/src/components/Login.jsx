@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AddUsername, AddUserPassword, AddUserId, 
-    AllUsers } from "../store/actions/UserActions";
+    AllUsers, SendLogin } from "../store/actions/UserActions";
 
 const Login = (props) => {
 
@@ -9,6 +9,7 @@ const Login = (props) => {
 
     const handleUsernameChange = (e) => {
         props.addUsername(e.target.value)
+
     }
 
     const handlePasswordChange = (e) => {
@@ -19,6 +20,12 @@ const Login = (props) => {
         e.preventDefault()
         // check against credentials in backend
         props.allUsers(props.userState.currentUsername)
+        let user = {
+            username: props.userState.currentUsername,
+            password: props.userState.currentUserPassword
+        }
+        console.log(user)
+        props.sendLogin(user)
         navigate('/')
     }
 
@@ -64,6 +71,7 @@ const mapActionsToProps = (dispatch) => {
         addUserPassword: (password) => dispatch(AddUserPassword(password)),
         addUserId: (userId) => dispatch(AddUserId(userId)),
         allUsers: (user) => dispatch(AllUsers(user)),
+        sendLogin: (user) => dispatch(SendLogin(user)),
     }
 }
 

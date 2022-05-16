@@ -9,6 +9,15 @@ export const SignInUser = async (data) => {
   }
 };
 
+export const LogoutUser = async () => {
+  try {
+    const res = await Client.get("logout");
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const RegisterUser = async (data) => {
   try {
     const res = await Client.post("users/register", data);
@@ -18,7 +27,7 @@ export const RegisterUser = async (data) => {
   }
 };
 
-// research Django check session
+
 
 export const GetAllUsers = async () => {
   try {
